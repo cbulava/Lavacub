@@ -1,0 +1,69 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #555;
+    display:inline-block;
+    box-shadow: 0px 5px 20px #cecece;
+}
+
+ul .header {
+    float:left;
+    text-align:center;
+}
+
+ul .menu-bar {
+    float:left;
+    text-align:center;
+    width:200px;
+}
+
+.header a {
+    display: block;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    padding:15px;
+    padding-left:20px;
+}
+
+/* Change the link color on hover */
+.header a:hover {
+    color: #cecece;
+}
+
+.active {
+    /*background-color: #4CAF50;*/
+    color: #4CAF50 !important;
+    box-shadow:none;
+    border-bottom: #4CAF50 solid;
+}
+
+.inactive {
+    background-color: #555;
+    color: black;
+}
+
+.bar{
+    float:left;
+    padding-left: 30px;
+}
+
+.bar a{
+    text-align:center;
+}
+
+.title {
+    float:left;
+    text-align:left;
+    width:50%;
+    padding-top:15px;
+    color:#4CAF50;
+    font-weight:800;
+}
+
+.lavacub {
+    height:25px;
+    margin:12px;
+}

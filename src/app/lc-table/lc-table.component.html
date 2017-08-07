@@ -1,0 +1,46 @@
+<!--<table class="table table-striped" [style.width.px]=width [style.height.px]=height [style.overflow.y]=scrollable>
+    <thead>
+        <tr>
+            <th *ngFor="let displayValue of colDisplayVals; let i = index">
+                {{displayValue}} 
+                <i (click)="sort(i)" *ngIf="sortDir[i]" class="fa fa-angle-double-down" aria-hidden="true"></i>
+                <i (click)="sort(i)" *ngIf="!sortDir[i]" class="fa fa-angle-double-up" aria-hidden="true"></i>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let row of rows; let i = index">
+            <td *ngFor="let val of colKeyVals">
+                {{getObjectValue(val, i)}}
+            </td>
+        </tr>
+    </tbody>
+</table>-->
+<div [style.width.px]=width>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th *ngFor="let displayValue of colDisplayVals; let i = index">
+                    {{displayValue}} 
+                    <i (click)="sort(i)" *ngIf="sortDir[i]" class="fa fa-angle-double-down" aria-hidden="true"></i>
+                    <i (click)="sort(i)" *ngIf="!sortDir[i]" class="fa fa-angle-double-up" aria-hidden="true"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody  [style.overflow-y]=scrollable  [style.height.px]=height>
+            <tr *ngFor="let row of currentPage; let i = index">
+                <td *ngFor="let val of colKeyVals">
+                    {{getObjectValue(val, i)}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="pager-div">
+        <i *ngIf="currentPageNumber != 1" (click)="setCurrentPage(currentPageNumber - 1)" class="fa fa-angle-left page-changer" aria-hidden="true"></i>
+        <ng-container *ngFor="let page of currentPageArray">
+            <a *ngIf="page == currentPageNumber" class="current-page">{{page}}</a>
+            <a *ngIf="page != currentPageNumber" class="page-changer" (click)="setCurrentPage(page)">{{page}}</a>
+        </ng-container>
+        <i *ngIf="currentPageNumber != maxPages" (click)="setCurrentPage(currentPageNumber + 1)" class="fa fa-angle-right page-changer" aria-hidden="true"></i>
+    </div>
+</div>

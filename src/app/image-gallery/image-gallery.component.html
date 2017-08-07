@@ -1,0 +1,41 @@
+
+<navbar [showMenu]="true" (onMenuStateChange)="toggleSideMenu($event)"></navbar>
+
+<div class="shadow" [style.height.px]="divHeight"> 
+    <ul>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+        <li><a href="#">example</a></li>
+    </ul>
+</div>
+<div style="overflow:hidden; padding-left: 18px;" [style.width.px]="mainDivWidth">
+    <div class="my-container main-div" [style.height.px]="divHeight" [style.width.px]="mainDivWidth + 20">
+        <div style="padding-bottom:10px;">
+            Select number of images per row  
+            <select type="number" [(ngModel)]="numTiles" (ngModelChange)="modifyDimensions(numTiles)">
+                <ng-container *ngFor="let tile of tileOptions">
+                    <option (ngValue)="tile">
+                        {{tile}}
+                    </option>
+                </ng-container>
+            </select>
+        </div>
+        <ul class="image-ul" [style.column-count]="numTiles" [style.-o-column-count]="numTiles" [style.-moz-column-count]="numTiles" [style.-webkit-column-count]="numTiles">
+            <li *ngFor="let img of imgUrl1Array; let i = index"  >
+                <div class="img-box">
+                    <img #images1 class="img" [src]="img" />
+                </div>  
+            </li>
+        </ul>
+        <!--<div style="height:auto; display:inline-block; float:left; padding:5px;">
+            <div *ngFor="let img of imgUrl2Array; let i = index" >
+                    <img #images2 class="img" [src]="img" />
+            </div>
+        </div>-->
+    </div>
+</div>

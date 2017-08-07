@@ -1,0 +1,22 @@
+
+
+
+<ul>
+  <li class="menu-bar">
+      <div class="bar">
+          <img class="lavacub" src="../../images/lavacub---2.png"/>
+      </div>
+      <div class="title">
+        Lavacub
+      </div>
+  </li>
+  <li class="header">
+      <a routerLink="/home"  [ngClass]="active[0] ? 'active' : 'inactive'"  (click)="setActive(0)">Home</a>
+  </li>
+  <li class="header">
+      <a routerLink="/feature"  [ngClass]="active[1] ? 'active' : 'inactive'"  (click)="setActive(1)">Feature</a>
+  </li>
+  <li class="header">
+      <a routerLink="/image-gallery"  [ngClass]="active[2] ? 'active' : 'inactive'"  (click)="setActive(2)">Image-Gallery</a>
+  </li>
+</ul>

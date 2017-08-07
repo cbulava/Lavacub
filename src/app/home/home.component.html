@@ -1,0 +1,18 @@
+<navbar [showMenu]="false" (onMenuStateChange)="doNothing()"></navbar>
+
+<div class="my-container">
+    <h2>{{ projectName }} Project Loaded!</h2>
+    <br />
+    <br />
+    <input type="text" [(ngModel)]="input" (change)="runScript()">
+    <select type="number" [(ngModel)]="functionNum">
+        <ng-container *ngFor="let f of functionNumbers">
+            <option [ngValue]="f" [(selected)]="functionNumbers[0]">
+                {{f}}
+            </option>
+        </ng-container>
+    </select>
+    <p>
+        {{input}} {{functionNum}}
+    </p>
+</div>

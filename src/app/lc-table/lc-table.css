@@ -1,0 +1,73 @@
+
+/* Table class is reusable */
+
+.table {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+}
+
+.table thead tr th {
+    border-bottom: 0px !important;
+}
+
+.table thead {
+    /* head takes the height it requires,
+    and it's not scaled when table is resized */
+    flex: 0 0 auto;
+    width: calc(100% - 0.9em);
+}
+
+.table tbody {
+    /* body takes all the remaining available space */
+    flex: 1 1 auto;
+    display: block;
+    /*overflow-y: scroll;*/
+}
+
+.table tbody tr {
+    width: 100%;
+}
+
+.table thead, .table tbody tr {
+    display: table;
+    table-layout: fixed;
+}
+
+.table-container {
+    height: 10em;
+}
+
+.table tr:nth-child(even) {
+    background-color: #eee;
+}
+.table#t01 tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.pager-div {
+    width:150px;
+    height:25px;
+    padding:2px;
+    border-radius:20px;
+    background-color:#efefef;
+    cursor:pointer;
+    float:right;
+    text-align:center;
+}
+
+.page-changer {
+    color: black;
+    cursor: pointer;
+    height:16px;
+}
+
+.page-changer:hover {
+    color:#4CAF50;
+    height:20px;
+}
+
+.current-page {
+    color:#4CAF50;
+    cursor: pointer;
+}
